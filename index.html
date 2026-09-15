@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henrique Sturion - Portfólio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --muted-color: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), 
+                        url('bannerportfolio.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        header p {
+            color: var(--muted-color);
+            font-size: 1.2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Grid centralizada para as tecnologias com crachás modernos */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .skill-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent-color);
+        }
+        .skill-badge:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        .card p {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted-color);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Henrique Sturion</h1>
+        <p>Cientista de Dados & Desenvolvedor</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Sobre Mim</h2>
+            <p>Estudante de Ciência de Dados e estagiário de tecnologia. Apaixonado por análise de dados, machine learning e automações, com experiência em Python, SQL, Power BI, Power Apps, Power Automate e desenvolvimento de soluções eficientes.</p>
+            
+            <!-- Habilidades perfeitamente centralizadas e padronizadas -->
+            <div class="skills-grid">
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 6 4.14 6 6v2h6v1H4c-2.21 0-4 1.79-4 4v4c0 2.21 1.79 4 4 4h2v-3c0-1.66 1.34-3 3-3h5V12c0-1.86-.74-3-3-3h-3V6c0-1.86.74-4 4-4h2z"/></svg>
+                    Python
+                </div>
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    SQL
+                </div>
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24"><path d="M4 9h4v11H4V9zm6-6h4v17h-4V3zm6 4h4v13h-4V7z"/></svg>
+                    Power BI
+                </div>
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    Power Apps
+                </div>
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L15.15 10H8.85L12 5.84zM6.5 13C4.57 13 3 14.57 3 16.5S4.57 20 6.5 20s3.5-1.57 3.5-3.5S8.43 13 6.5 13zm11 0c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/></svg>
+                    Power Automate
+                </div>
+                <div class="skill-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                    Databricks
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projetos no Kaggle</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <div>
+                        <h3>Clusterização de Clientes (K-Means)</h3>
+                        <p>Modelo em Python voltado para segmentação e agrupamento de clientes aplicando algoritmos de Machine Learning.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/customer-segmentation-using-k-means" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Vendas Diárias de uma Padaria Francesa</h3>
+                        <p>Projeto de análise de dados e previsão explorando séries temporais e visualizações avançadas.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/vendas-di-rias-de-uma-padaria-francesa" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Exploração e Análise de Dados de Crédito com SQL</h3>
+                        <p>Análise exploratória utilizando consultas SQL avançadas para extração de insights e padrões em dados de crédito.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/explora-o-e-an-lise-de-dados-de-cr-dito-com-sql" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Análise de Dados de Inadimplentes</h3>
+                        <p>Estudo detalhado e tratamento de dados voltado para identificação de perfis e fatores associados à inadimplência.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/an-lise-de-dados-de-inadimplentes" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contato & Redes</h2>
+            <p>Acompanhe meus códigos e produções:</p>
+            <p>
+                <a href="https://github.com/henriquevanceto" target="_blank">GitHub</a> | 
+                <a href="https://www.kaggle.com/henriquevanceto" target="_blank">Kaggle</a> |
+                <a href="https://www.linkedin.com/in/henriquevanceto/" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Henrique Sturion. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
