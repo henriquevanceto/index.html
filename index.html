@@ -21,7 +21,7 @@
             line-height: 1.6;
         }
         
-        /* Força a cor azul claro em todos os links do site (novos, visitados ou ativos) */
+        /* Links padronizados */
         a, a:link, a:visited {
             color: var(--accent-color) !important;
             text-decoration: none !important;
@@ -67,6 +67,7 @@
             font-size: 1.5rem;
         }
         
+        /* Habilidades */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -100,6 +101,61 @@
             border-color: var(--accent-color);
         }
 
+        /* Destaques de Gráficos (Showcase) */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+        .showcase-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .showcase-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+        }
+        .showcase-img-container {
+            width: 100%;
+            height: 220px;
+            background-color: #0b1120;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .showcase-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 0.5rem;
+        }
+        .showcase-card:hover .showcase-img-container img {
+            transform: scale(1.03);
+        }
+        .showcase-content {
+            padding: 1.2rem;
+        }
+        .showcase-content h3 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.05rem;
+            color: var(--accent-color);
+        }
+        .showcase-content p {
+            margin: 0;
+            color: var(--muted-color);
+            font-size: 0.88rem;
+        }
+
+        /* Cards de Projetos */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -186,6 +242,58 @@
                     <span>Databricks</span>
                     <img src="assets/icons/databrickspngzao.png" alt="Databricks">
                 </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE DESTAQUES VISUAIS -->
+        <section>
+            <h2>Modelagem & Insights em Destaque</h2>
+            <div class="showcase-grid">
+                
+                <!-- Gráfico 1 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="__results___62_0.png" alt="Previsão de Vendas - Séries Temporais">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Previsão de Faturamento com IA</h3>
+                        <p>Modelagem de séries temporais comparando valores reais e previstos para otimização de planejamento de vendas.</p>
+                    </div>
+                </div>
+
+                <!-- Gráfico 2 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="__results___70_0.png" alt="Análise de Erros e Resíduos">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Diagnóstico e Análise de Resíduos</h3>
+                        <p>Avaliação da distribuição de erros e dispersão em relação ao faturamento real para validação do modelo.</p>
+                    </div>
+                </div>
+
+                <!-- Gráfico 3 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="1788868577625.jpg" alt="Segmentação de Clientes K-Means">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Segmentação de Clientes (K-Means)</h3>
+                        <p>Agrupamento não-supervisionado em escala logarítmica analisando frequência de compra e ticket médio.</p>
+                    </div>
+                </div>
+
+                <!-- Gráfico 4 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="1788868577693.jpg" alt="Regressão e Correlação Linear">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Correlação e Regressão Linear</h3>
+                        <p>Análise estatística de correlação (Pearson/Spearman) entre frequência de compra e valor monetário ($R^2 = 0.618$).</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
