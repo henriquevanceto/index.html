@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henrique Sturion - Portfólio</title>
+    <!-- Importando FontAwesome para ícones garantidos e padronizados -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #0f172a;
@@ -23,7 +25,6 @@
         header {
             text-align: center;
             padding: 4rem 1rem;
-            /* Usando exatamente o nome do arquivo que você definiu */
             background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), 
                         url('bannerportfolio.jpg') no-repeat center center;
             background-size: cover;
@@ -54,6 +55,42 @@
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
+        
+        /* Estilização centralizada e alinhada dos ícones de Habilidades */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        .skill-badge i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        .skill-badge:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+            box-shadow: 0 6px 8px -1px rgba(56, 189, 248, 0.2);
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -109,6 +146,16 @@
         <section>
             <h2>Sobre Mim</h2>
             <p>Estudante de Ciência de Dados e estagiário de tecnologia. Apaixonado por análise de dados, machine learning e automações, com experiência em Python, SQL, Power BI, Power Apps, Power Automate e desenvolvimento de soluções eficientes.</p>
+            
+            <!-- Habilidades com Ícones Centralizados e Padronizados -->
+            <div class="skills-grid">
+                <div class="skill-badge"><i class="fa-brands fa-python"></i> Python</div>
+                <div class="skill-badge"><i class="fa-brands fa-github"></i> GitHub</div>
+                <div class="skill-badge"><i class="fa-solid fa-chart-line"></i> Kaggle</div>
+                <div class="skill-badge"><i class="fa-solid fa-mobile-screen-button"></i> Power Apps</div>
+                <div class="skill-badge"><i class="fa-solid fa-bolt"></i> Power Automate</div>
+                <div class="skill-badge"><i class="fa-solid fa-chart-pie"></i> Power BI</div>
+            </div>
         </section>
 
         <section>
