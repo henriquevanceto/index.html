@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henrique Sturion - Portfólio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --muted-color: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), 
+                        url('bannerportfolio.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        header p {
+            color: var(--muted-color);
+            font-size: 1.2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Estilos para os ícones centralizados e alinhados */
+        .skills-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .skills-icons img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+        .skills-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        .card p {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted-color);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Henrique Sturion</h1>
+        <p>Cientista de Dados & Desenvolvedor</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Sobre Mim</h2>
+            <p>Estudante de Ciência de Dados e estagiário de tecnologia. Apaixonado por análise de dados, machine learning e automações, com experiência em Python, SQL, Power BI, Power Apps, Power Automate e desenvolvimento de soluções eficientes.</p>
+            
+            <!-- Ícones das tecnologias centralizados e padronizados -->
+            <div class="skills-icons">
+                <img src="pythoniconpgzao.png" alt="Python" title="Python">
+                <img src="sqlpngzao.png" alt="SQL" title="SQL">
+                <img src="powerbipngzao.png" alt="Power BI" title="Power BI">
+                <img src="powerappspngzao.png" alt="Power Apps" title="Power Apps">
+                <img src="automatepngzao.png" alt="Power Automate" title="Power Automate">
+                <img src="databrickspngzao.png" alt="Databricks" title="Databricks">
+            </div>
+        </section>
+
+        <section>
+            <h2>Projetos no Kaggle</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <div>
+                        <h3>Clusterização de Clientes (K-Means)</h3>
+                        <p>Modelo em Python voltado para segmentação e agrupamento de clientes aplicando algoritmos de Machine Learning.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/customer-segmentation-using-k-means" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Vendas Diárias de uma Padaria Francesa</h3>
+                        <p>Projeto de análise de dados e previsão explorando séries temporais e visualizações avançadas.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/vendas-di-rias-de-uma-padaria-francesa" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Exploração e Análise de Dados de Crédito com SQL</h3>
+                        <p>Análise exploratória utilizando consultas SQL avançadas para extração de insights e padrões em dados de crédito.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/explora-o-e-an-lise-de-dados-de-cr-dito-com-sql" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Análise de Dados de Inadimplentes</h3>
+                        <p>Estudo detalhado e tratamento de dados voltado para identificação de perfis e fatores associados à inadimplência.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/an-lise-de-dados-de-inadimplentes" target="_blank">Ver no Kaggle &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contato & Redes</h2>
+            <p>Acompanhe meus códigos e produções:</p>
+            <p>
+                <a href="https://github.com/henriquevanceto" target="_blank">GitHub</a> | 
+                <a href="https://www.kaggle.com/henriquevanceto" target="_blank">Kaggle</a> |
+                <a href="https://www.linkedin.com/in/henriquevanceto/" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Henrique Sturion. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
