@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Henrique Sturion</title>
+    
+    <!-- Metadados para o LinkedIn e Redes Sociais -->
+    <meta property="og:title" content="Portfólio - Henrique Sturion" />
+    <meta property="og:description" content="Meu portfólio de projetos em Data Science e tecnologia." />
+    <meta property="og:image" content="https://henriquevanceto.github.io/assets/images/previsao-vendas.png" />
+    <meta property="og:url" content="https://henriquevanceto.github.io/index.html" />
+    
+    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="icon" type="image/png" href="assets/icons/data-science.png?v=4">
+    <link rel="shortcut icon" type="image/png" href="assets/icons/data-science.png?v=4">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --muted-color: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* Standardized links */
+        a, a:link, a:visited {
+            color: var(--accent-color) !important;
+            text-decoration: none !important;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        a:hover, a:active {
+            color: var(--accent-color) !important;
+            text-decoration: underline !important;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), 
+                        url('bannerportfolio.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        header p {
+            color: var(--muted-color);
+            font-size: 1.2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .skill-badge img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .skill-badge:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        /* Showcase Grid (Charts & Insights) */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+        .showcase-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .showcase-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+        }
+        .showcase-img-container {
+            width: 100%;
+            height: 220px;
+            background-color: #0b1120;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .showcase-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 0.5rem;
+        }
+        .showcase-card:hover .showcase-img-container img {
+            transform: scale(1.03);
+        }
+        .showcase-content {
+            padding: 1.2rem;
+        }
+        .showcase-content h3 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.05rem;
+            color: var(--accent-color);
+        }
+        .showcase-content p {
+            margin: 0;
+            color: var(--muted-color);
+            font-size: 0.88rem;
+        }
+
+        /* Corporate Applications Carousel */
+        .carousel-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .carousel-container {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
+            transition: border-color 0.3s ease;
+        }
+        .carousel-container:hover {
+            border-color: var(--accent-color);
+        }
+        .carousel-slide-img-container {
+            width: 100%;
+            height: 380px;
+            background-color: #0b1120;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            overflow: hidden;
+        }
+        .carousel-slide-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0.8rem;
+            transition: opacity 0.3s ease;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(15, 23, 42, 0.8);
+            color: var(--accent-color);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        .carousel-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+        .carousel-btn.prev { left: 15px; }
+        .carousel-btn.next { right: 15px; }
+        
+        .carousel-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .carousel-content h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+        .carousel-content p {
+            margin: 0;
+            color: var(--muted-color);
+            font-size: 0.98rem;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .dot.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        .card p {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted-color);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Henrique Sturion</h1>
+        <p>Data Scientist & Developer</p>
+    </header>
+
+    <div class="container">
+        <!-- 1. ABOUT ME -->
+        <section>
+            <h2>About Me</h2>
+            <p>Data Science student and technology intern. Passionate about data analysis, machine learning, and automation, with hands-on experience in Python, SQL, Power BI, Power Apps, Power Automate, and developing efficient solutions.</p>
+            
+            <div class="skills-grid">
+                <!-- Python -->
+                <div class="skill-badge">
+                    <span>Python</span>
+                    <img src="assets/icons/pythoniconpgzao.png" alt="Python">
+                </div>
+
+                <!-- SQL -->
+                <div class="skill-badge">
+                    <span>SQL</span>
+                    <img src="assets/icons/sqlcomfundonosqlpngzao.png" alt="SQL">
+                </div>
+
+                <!-- Power BI -->
+                <div class="skill-badge">
+                    <span>Power BI</span>
+                    <img src="assets/icons/powerbipngzao.png" alt="Power BI">
+                </div>
+
+                <!-- Power Apps -->
+                <div class="skill-badge">
+                    <span>Power Apps</span>
+                    <img src="assets/icons/powerappspngzao.png" alt="Power Apps">
+                </div>
+
+                <!-- Power Automate -->
+                <div class="skill-badge">
+                    <span>Power Automate</span>
+                    <img src="assets/icons/automatepngzao1080.png" alt="Power Automate">
+                </div>
+
+                <!-- Databricks -->
+                <div class="skill-badge">
+                    <span>Databricks</span>
+                    <img src="assets/icons/databrickspngzao.png" alt="Databricks">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FEATURED MODELING & INSIGHTS -->
+        <section>
+            <h2>Featured Modeling & Insights</h2>
+            <div class="showcase-grid">
+                
+                <!-- Chart 1 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="assets/images/previsao-vendas.png" alt="Sales Forecasting - Time Series">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Revenue Forecasting with AI</h3>
+                        <p>Time series modeling comparing actual versus predicted values for sales planning optimization.</p>
+                    </div>
+                </div>
+
+                <!-- Chart 2 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="assets/images/analise-residuos.png" alt="Error and Residual Analysis">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Diagnostics & Residual Analysis</h3>
+                        <p>Evaluation of error distribution and dispersion relative to actual revenue for model validation.</p>
+                    </div>
+                </div>
+
+                <!-- Chart 3 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="assets/images/clusterizacao-kmeans.jpg" alt="K-Means Customer Segmentation">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Customer Segmentation (K-Means)</h3>
+                        <p>Unsupervised logarithmic scaling clustering analyzing purchase frequency and average ticket size.</p>
+                    </div>
+                </div>
+
+                <!-- Chart 4 -->
+                <div class="showcase-card">
+                    <div class="showcase-img-container">
+                        <img src="assets/images/regressao-linear.png" alt="Linear Regression - Gross Revenue x Frequency">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>Gross Revenue x Purchase Frequency</h3>
+                        <p>Statistical correlation analysis (Pearson = 0.853) between purchase frequency and gross revenue (R² = 0.728).</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. KAGGLE PROJECTS -->
+        <section>
+            <h2>Kaggle Projects</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <div>
+                        <h3>Customer Clustering (K-Means)</h3>
+                        <p>Python model focused on customer segmentation and grouping applying Machine Learning algorithms.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/customer-segmentation-using-k-means" target="_blank">View on Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>French Bakery Daily Sales</h3>
+                        <p>Data analysis and forecasting project exploring time series and advanced visualizations.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/vendas-di-rias-de-uma-padaria-francesa" target="_blank">View on Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Credit Data Exploration & Analysis with SQL</h3>
+                        <p>Exploratory analysis using advanced SQL queries for extracting insights and patterns in credit data.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/explora-o-e-an-lise-de-dados-de-cr-dito-com-sql" target="_blank">View on Kaggle &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Defaulted Accounts Data Analysis</h3>
+                        <p>Detailed study and data treatment focused on identifying profiles and factors associated with default.</p>
+                    </div>
+                    <a href="https://www.kaggle.com/code/henriquevanceto/an-lise-de-dados-de-inadimplentes" target="_blank">View on Kaggle &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. GITHUB PROJECTS -->
+        <section>
+            <h2>GitHub Projects</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <div>
+                        <h3>Credit Score</h3>
+                        <p>Predictive analysis and modeling for credit risk evaluation and underwriting.</p>
+                    </div>
+                    <a href="https://github.com/henriquevanceto/credit_score" target="_blank">View on GitHub &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Telemarketing Analysis</h3>
+                        <p>Exploratory study and data modeling focused on telemarketing campaign conversion.</p>
+                    </div>
+                    <a href="https://github.com/henriquevanceto/analise_de_telemarketing" target="_blank">View on GitHub &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Telemarketing Campaign Analysis</h3>
+                        <p>Detailed modeling and performance evaluation of campaigns to optimize conversion and engagement.</p>
+                    </div>
+                    <a href="https://github.com/henriquevanceto/analise_de_campanha_de_telemarketing" target="_blank">View on GitHub &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Income Prediction</h3>
+                        <p>Development of regression models for predictive analysis of individual income.</p>
+                    </div>
+                    <a href="https://github.com/henriquevanceto/previsao_de_renda" target="_blank">View on GitHub &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Study Repository (EBAC)</h3>
+                        <p>Compilation of assignments, practical exercises, and projects developed throughout the data program.</p>
+                    </div>
+                    <a href="https://github.com/henriquevanceto/EBAC_repositorio_de_estudos" target="_blank">View on GitHub &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CORPORATE APPLICATIONS & AUTOMATIONS (CAROUSEL) -->
+        <section>
+            <h2>Corporate Applications & Automations</h2>
+            <p style="color: var(--muted-color); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Corporate systems developed to optimize internal routines, manage inventories, and control approval workflows at Unimil.
+            </p>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide-img-container">
+                        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <img id="carousel-img" src="assets/images/brindes1.png" alt="Swag Hub">
+                        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                    <div class="carousel-content">
+                        <h3 id="carousel-title">Swag Hub (Overview)</h3>
+                        <p id="carousel-desc">Centralized menu dividing modules for New Request, Inventory Control, and Approvals & Outputs.</p>
+                    </div>
+                </div>
+
+                <!-- Indicators (Dots) -->
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT & NETWORKS -->
+        <section>
+            <h2>Contact & Networks</h2>
+            <p>Check out my code and productions:</p>
+            <p>
+                <a href="https://github.com/henriquevanceto" target="_blank">GitHub</a> | 
+                <a href="https://www.kaggle.com/henriquevanceto" target="_blank">Kaggle</a> |
+                <a href="https://www.linkedin.com/in/henriquevanceto/" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Henrique Sturion. All rights reserved.</p>
+    </footer>
+
+    <!-- CAROUSEL SCRIPT -->
+    <script>
+        const slides = [
+            {
+                img: "assets/images/brindes1.png",
+                title: "Swag Hub (Overview)",
+                desc: "Centralized menu dividing modules for New Request, Inventory Control, and Approvals & Outputs."
+            },
+            {
+                img: "assets/images/brindes2.png",
+                title: "New Request Module",
+                desc: "Interactive interface with dynamic quantity control based on real-time available inventory."
+            },
+            {
+                img: "assets/images/brindes3.png",
+                title: "Inventory Control & Suppliers",
+                desc: "Inventory management integrating detailed supplier data, contact emails, and stock levels."
+            },
+            {
+                img: "assets/images/brindes4.png",
+                title: "Approval & Outputs Panel",
+                desc: "Management of pending orders detailing department, visit reason, and requested items for quick decision-making."
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = slides.length - 1;
+            }
+            updateCarouselView();
+        }
+
+        function currentSlide(index) {
+            currentIndex = index;
+            updateCarouselView();
+        }
+
+        function updateCarouselView() {
+            const imgElement = document.getElementById('carousel-img');
+            const titleElement = document.getElementById('carousel-title');
+            const descElement = document.getElementById('carousel-desc');
+            const dots = document.querySelectorAll('.dot');
+
+            // Update contents
+            imgElement.src = slides[currentIndex].img;
+            titleElement.textContent = slides[currentIndex].title;
+            descElement.textContent = slides[currentIndex].desc;
+
+            // Update active dot state
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+    </script>
+
+</body>
+</html>
